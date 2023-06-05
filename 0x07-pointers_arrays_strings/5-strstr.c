@@ -31,7 +31,11 @@ char *_strstr(char *haystack, char *needle)
 		}
 	}
 	if (k > -1)
+	{
 		return (haystack + k);
+	}
 	else
+	{
 		return (NULL);
+	}
 }
