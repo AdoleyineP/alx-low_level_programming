@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
- * str_concat - 
- * @s1: 
- * @s2:
+ * str_concat - function
+ * @s1: paramater
+ * @s2: parameter
  *
- * Return: 
+ * Return: value
  */
 char *str_concat(char *s1, char *s2)
 {
