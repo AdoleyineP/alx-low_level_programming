@@ -1,34 +1,32 @@
 #include <stdio.h>
+
 /**
- * main - Entry point
- * Return: Always 0 (Success)
+ * main - entry point
+ * Return: 0
  */
 int main(void)
 {
-	int i, j, k, l;
+	int num1, num2;
 
-	for (i = 48; i < 58; i++)
+	for (num1 = 0; num1 <= 98; num1++)
 	{
-		for (j = 48; j < 58; j++)
+		for (num2 = num1 + 1; num2 <= 99; num2++)
 		{
-			for (k = 48; k < 58; k++)
+			putchar(num1 / 10 + '0');
+			putchar(num1 % 10 + '0');
+			putchar(' ');
+			putchar(num2 / 10 + '0');
+			putchar(num2 % 10 + '0');
+
+			if (num1 != 98 || num2 != 99)
 			{
-				for (l = 49; l < 58; l++)
-				{
-					putchar(i);
-					putchar(j);
-					putchar(' ');
-					putchar(k);
-					putchar(l);
-					if ((i != 9 && j != 9) && (k != 9 && l != 9))
-					{
-						putchar(',');
-						putchar(' ');
-					}
-				}
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
+
 	putchar('\n');
+
 	return (0);
 }
