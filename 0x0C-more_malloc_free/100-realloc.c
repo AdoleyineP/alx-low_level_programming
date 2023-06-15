@@ -12,41 +12,41 @@
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-    void *new_ptr;
+	void *new_ptr;
 
-    /* If new_size is zero, equivalent to free(ptr) */
-    if (new_size == 0 && ptr != NULL)
-    {
-        free(ptr);
-        return (NULL);
-    }
+	/* If new_size is zero, equivalent to free(ptr) */
+	if (new_size == 0 && ptr != NULL)
+	{
+		free(ptr);
+		return (NULL);
+	}
 
-    /* If ptr is NULL, equivalent to malloc(new_size) */
-    if (ptr == NULL)
-    {
-        new_ptr = malloc(new_size);
-        return (new_ptr);
-    }
+	/* If ptr is NULL, equivalent to malloc(new_size) */
+	if (ptr == NULL)
+	{
+		new_ptr = malloc(new_size);
+		return (new_ptr);
+	}
 
-    /* If new_size is equal to old_size, do nothing and return ptr */
-    if (new_size == old_size)
-        return (ptr);
+	/* If new_size is equal to old_size, do nothing and return ptr */
+	if (new_size == old_size)
+		return (ptr);
 
-    /* Allocate new memory block with new_size */
-    new_ptr = malloc(new_size);
+	/* Allocate new memory block with new_size */
+	new_ptr = malloc(new_size);
 
-    if (new_ptr == NULL)
-        return (NULL);
+	if (new_ptr == NULL)
+		return (NULL);
 
-    /* Copy contents from old block to new block */
-    if (new_size > old_size)
-        memcpy(new_ptr, ptr, old_size);
-    else
-        memcpy(new_ptr, ptr, new_size);
+	/* Copy contents from old block to new block */
+	if (new_size > old_size)
+		memcpy(new_ptr, ptr, old_size);
+	else
+		memcpy(new_ptr, ptr, new_size);
 
-    /* Free the old memory block */
-    free(ptr);
+	/* Free the old memory block */
+	free(ptr);
 
-    return (new_ptr);
+	return (new_ptr);
 }
 
